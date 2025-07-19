@@ -1,0 +1,12 @@
+```mermaid
+flowchart TD
+    A[User submits login credentials] --> B[System receives input]
+    B --> C[Validate input fields]
+    C --> D{Are fields valid?}
+    D -- No --> E[Show validation error]
+    D -- Yes --> F[Check credentials against database]
+    F --> G{Are credentials correct?}
+    G -- Yes --> H[Authentication successful]
+    G -- No --> I[Authentication failed]
+    H --> J[Redirect to dashboard]
+    I --> K[Show error message]

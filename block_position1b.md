@@ -12,6 +12,7 @@ flowchart TD
     B
   end
 
+ D[Block 4]
   %% Place block3 below the horizontal blocks (no connections)
   C
 ```

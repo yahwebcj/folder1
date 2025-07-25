@@ -2,6 +2,11 @@
 
 
 flowchart TD
+
+A1[Block1]
+A2[Block2]
+
+
         A(["Start"])
         A --> B{"Decision"}
         B --> C["Option A"]

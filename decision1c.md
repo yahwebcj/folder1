@@ -1,7 +1,6 @@
----
-config:
-      theme: redux
----
+```mermaid
+
+
 flowchart TD
         A(["Start"])
         A --> B{"Decision"}

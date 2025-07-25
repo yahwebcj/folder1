@@ -1,8 +1,5 @@
 ```mermaid
 
-
-
-```mermaid
 flowchart TD
     A1[Block1]
     A2[Block2]

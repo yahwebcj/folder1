@@ -1,1 +1,42 @@
-ddddd
+
+flowchart TD
+    Start([Start]) --> A1[Enter Patient Information]
+    A1 --> A2[Choose Service/Doctor]
+    A2 --> A3[Choose Date & Time]
+    A3 --> B1{Is the date/time available?}
+    B1 -- "Yes" --> B2{Do you want to confirm the booking?}
+    B1 -- "No" --> C1{Try another date/time?}
+    C1 -- "Yes" --> A3
+    C1 -- "No" --> End([End])
+    B2 -- "Yes" --> D1[Confirm Booking]
+    D1 --> D2[Show Confirmation Message/Summary]
+    D2 --> D3[Send Appointment Reminder]
+    D3 --> End
+    B2 -- "No" --> End
+
+    %% Existing appointment flow
+    Start --> E1{Do you have an existing appointment?}
+    E1 -- "Yes" --> F1{What do you want to do?}
+    F1 -- "Reschedule" --> G1[Enter Patient Information]
+    G1 --> G2[Choose New Date & Time]
+    G2 --> G3{Is the new date/time available?}
+    G3 -- "Yes" --> G4{Confirm reschedule?}
+    G3 -- "No" --> G5{Try another date/time?}
+    G5 -- "Yes" --> G2
+    G5 -- "No" --> End
+    G4 -- "Yes" --> G6[Confirm Reschedule]
+    G6 --> G7[Show Confirmation Message/Summary]
+    G7 --> G8[Send Appointment Reminder]
+    G8 --> End
+    G4 -- "No" --> End
+
+    F1 -- "Cancel" --> H1[Confirm Cancellation]
+    H1 --> H2{Are you sure?}
+    H2 -- "Yes" --> H3[Cancel Appointment]
+    H3 --> H4[Show Cancellation Confirmation]
+    H4 --> End
+    H2 -- "No" --> End
+
+    %% Connect new/existing flows
+    A1 -.-> E1
+```

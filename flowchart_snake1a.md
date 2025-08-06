@@ -4,7 +4,7 @@
 flowchart TD
     A([Start Game]) --> B([Initialize Snake, Food, Score, and Game Window])
     B --> C([Display Snake and Food])
-    C --> D([Read User Input (Direction)])
+    C --> D([Read User Input,Direction])
     D --> E([Update Snake Position])
     E --> F{Did Snake Hit Wall or Itself?}
     F -- Yes --> G([Game Over])
